@@ -65,3 +65,108 @@ h1 {
 .ligne:nth-child(3) {
   top: 36px;
 }
+/* --------------------Animation 1 CROIX BASIQUE---------------------------------- */
+
+.btn1.active .ligne:nth-child(1) {
+  top: 18px;
+  transform: rotate(135deg);
+}
+.btn1.active .ligne:nth-child(2) {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+.btn1.active .ligne:nth-child(3) {
+  top: 18px;
+  transform: rotate(-135deg);
+}
+/* --------------------Animation 2 CROIX DROITE--------------------------------- */
+
+.btn2.active .ligne:nth-child(1) {
+  top: 18px;
+}
+.btn2.active .ligne:nth-child(2) {
+  opacity: 0;
+}
+.btn2.active .ligne:nth-child(3) {
+  top: 18px;
+  transform: rotate(90deg);
+}
+
+/* --------------------Animation 3 RAPPROCHEMENT--------------------------------- */
+.btn3.active .ligne:nth-child(1) {
+  top: 18px;
+}
+.btn3.active .ligne:nth-child(2) {
+  opacity: 0;
+}
+.btn3.active .ligne:nth-child(3) {
+  top: 18px;
+}
+
+/* --------------------Animation 4 CARET VERS LE BAS--------------------------------- */
+.btn4.ligne {
+  transition: all 0.25s ease-out;
+}
+.btn4.active {
+  transform: rotate(90deg);
+}
+.btn4.active .ligne:nth-child(1),
+.btn4.active .ligne:nth-child(3) {
+  width: 35px;
+  transform-origin: right;
+}
+.btn4.active .ligne:nth-child(2) {
+  opacity: 0;
+  transition: none;
+}
+.btn4.active .ligne:nth-child(1) {
+  transform: translateY(20px) rotate(45deg);
+}
+.btn4.active .ligne:nth-child(3) {
+  transform: translateY(-20px) rotate(-45deg);
+}
+
+/* --------------------Animation 5 MULTIPLE ANIMATION--------------------------------- */
+.ligneM {
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  background: #000;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  margin: 12px auto;
+}
+.ligneM:nth-child(1) {
+  margin-top: 0;
+}
+.btn5.active .ligneM:nth-child(2) {
+  width: 0; /* grace à margin auto il se referme sur lui même*/
+}
+.btn5.active .ligneM:nth-child(1),
+.btn5.active .ligneM:nth-child(3) {
+  transition-delay: 0.5s;
+}
+.btn5.active .ligneM:nth-child(1) {
+  transform: translateY(18px);
+}
+.btn5.active .ligneM:nth-child(3) {
+  transform: translateY(-18px) rotate(90deg);
+}
+.btn5.active {
+  transition: all 0.3s 0.8s ease-in-out;
+  transform: rotate(45deg);
+}
+
+/* --------------------Animation 6 SLIDE--------------------------------- */
+
+.btn6.active .ligne:nth-child(1) {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.btn6.active .ligne:nth-child(2) {
+  transition: none;
+}
+.btn6.active .ligne:nth-child(3) {
+  transform: translateX(100%);
+  opacity: 0;
+}

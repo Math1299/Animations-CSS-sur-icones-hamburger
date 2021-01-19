@@ -45,9 +45,9 @@
       </div>
       <div class="box">
         <div class="contLigne btn5">
-          <div class="ligne"></div>
-          <div class="ligne"></div>
-          <div class="ligne"></div>
+          <div class="ligneM"></div>
+          <div class="ligneM"></div>
+          <div class="ligneM"></div>
         </div>
       </div>
       <div class="box">
@@ -100,5 +100,15 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const allBtn = document.querySelectorAll(".contLigne");
+
+      allBtn.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.classList.toggle("active");
+        });
+      });
+    </script>
   </body>
 </html>
