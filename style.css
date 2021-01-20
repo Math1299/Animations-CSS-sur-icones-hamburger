@@ -170,3 +170,220 @@ h1 {
   transform: translateX(100%);
   opacity: 0;
 }
+
+/* --------------------Animation 7 --------------------------------- */
+.contLigne.btn7.active {
+  transform: rotate(-30deg);
+}
+.btn7 .ligne:nth-child(1) {
+  top: 0px;
+}
+.btn7 .ligne:nth-child(2) {
+  top: 12px;
+}
+.btn7 .ligne:nth-child(3) {
+  top: 24px;
+}
+.btn7.active .ligne:nth-child(1) {
+  width: 30px;
+}
+.btn7.active .ligne:nth-child(2) {
+  width: 40px;
+}
+.btn7.active .ligne:nth-child(3) {
+  width: 50px;
+}
+.btn7 {
+  transition: all 0.4s ease-in-out;
+}
+
+/* --------------------Animation 8 CERCLE AVEC PSEUDO ELEMENT --------------------------------- */
+
+.btn8 {
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn8.active {
+  transform: rotate(45deg);
+}
+.btn8::before {
+  content: "";
+  width: 70px;
+  height: 70px;
+  border: 5px solid transparent;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out;
+}
+.btn8.active::before {
+  transition-delay: 0.3s;
+  border: 5px solid #000;
+}
+.btn8.active .ligne {
+  width: 35px;
+}
+.btn8.active .ligne:nth-child(1) {
+  transform: translate(12.5px, 18px);
+}
+.btn8.active .ligne:nth-child(2) {
+  transition: all 0.1s ease-in;
+  opacity: 0;
+}
+.btn8.active .ligne:nth-child(3) {
+  transform: translate(12.5px, -18px) rotate(90deg);
+}
+
+/* --------------------Animation 9 APPARITION --------------------------------- */
+
+.btn9.active {
+  animation: smallBig 0.6s forwards;
+}
+@keyframes smallBig {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.btn9.active .ligne:nth-child(2) {
+  opacity: 0;
+}
+.btn9.active .ligne:nth-child(1) {
+  transform: translateY(18px) rotate(45deg);
+}
+.btn9.active .ligne:nth-child(3) {
+  transform: translateY(-18px) rotate(-45deg);
+}
+
+/* --------------------Animation 10 TOUPIE --------------------------------- */
+.btn10.active {
+  transition: all 0.3s;
+  transform: rotate(180deg);
+}
+.btn10.active .ligne {
+  transition: all 0.1s;
+}
+
+.btn10.active .ligne:nth-child(1) {
+  transform: translateY(18px) rotate(45deg);
+}
+.btn10.active .ligne:nth-child(3) {
+  transform: translateY(-18px) rotate(-45deg);
+}
+.btn10.active .ligne:nth-child(2) {
+  opacity: 0;
+}
+
+/* --------------------Animation 11PSEUDO EL + ANIMATIONS --------------------------------- */
+.ligneUnique {
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  background: #000;
+  position: absolute;
+  top: 18px;
+  transition: all 0ms 300ms;
+}
+.btn11.active .ligneUnique {
+  background: rgba(255, 255, 255, 0);
+}
+
+.ligneUnique::before {
+  content: "";
+  position: absolute;
+  bottom: 18px;
+  background: #000;
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  transition: bottom 300ms 300ms ease, transform 300ms ease;
+}
+.ligneUnique::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  background: #000;
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  transition: top 300ms 300ms ease, transform 300ms ease;
+}
+
+.btn11.active .ligneUnique::after {
+  top: 0;
+  transform: rotate(45deg);
+  transition: top 300ms ease, transform 300ms 300ms ease;
+}
+.btn11.active .ligneUnique::before {
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: top 300ms ease, transform 300ms 300ms ease;
+}
+/* --------------------Animation 12 MULTI BARRES --------------------------------- */
+.btn12 .ligne {
+  width: 50%;
+  height: 6px;
+  border-radius: 5px;
+  background: #000;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn12 .ligne:nth-child(even) {
+  left: 50%;
+  transition: translateX(-1px);
+}
+.btn12 .ligne:nth-child(odd) {
+  transition: translateX(1px);
+}
+.btn12 .ligne:nth-child(1),
+.btn12 .ligne:nth-child(2) {
+  top: 0px;
+}
+.btn12 .ligne:nth-child(3),
+.btn12 .ligne:nth-child(4) {
+  top: 18px;
+}
+.btn12 .ligne:nth-child(5),
+.btn12 .ligne:nth-child(6) {
+  top: 36px;
+}
+.btn12.active .ligne:nth-child(3) {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.btn12.active .ligne:nth-child(4) {
+  transform: translateX(50%);
+  opacity: 0;
+}
+.btn12.active .ligne:nth-child(1),
+.btn12.active .ligne:nth-child(6) {
+  transform: rotate(45deg);
+}
+.btn12.active .ligne:nth-child(2),
+.btn12.active .ligne:nth-child(5) {
+  transform: rotate(-45deg);
+}
+.btn12.active .ligne:nth-child(1) {
+  left: 5px;
+  top: 7px;
+}
+.btn12.active .ligne:nth-child(2) {
+  left: calc(50% - 5px);
+  top: 7px;
+}
+.btn12.active .ligne:nth-child(5) {
+  left: 5px;
+  top: 29px;
+}
+.btn12.active .ligne:nth-child(6) {
+  left: calc(50% - 5px);
+  top: 29px;
+}
